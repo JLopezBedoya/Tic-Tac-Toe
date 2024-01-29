@@ -1,11 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 .menu {
   position: absolute;
   display: grid;
-  grid-template-rows: 10% 45% 15% 15%;
+  grid-template-rows: 15% 40% 15% 15%;
   gap: 5%;
 }
 .menu-header {
   text-align: center;
+  font-size: 48px;
+}
+.menu-header h1 {
+  margin: 0;
 }
 .menu-select {
   background-color: rgb(31, 53, 64);
@@ -14,13 +19,13 @@
   border-radius: 15px;
   box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.541);
 }
-.menu-select div {
+.menu-select-text {
   height: 100%;
   display: grid;
   place-items: center;
 }
-.menu-select h3 {
-  color: rgb(166, 189, 200);
+.menu-select-text h3 {
+  color: rgb(229, 212, 204);
   margin: 0;
 }
 .menu-select section {
@@ -32,7 +37,7 @@
   align-items: center;
 }
 .menu-select section .selected {
-  background-color: rgb(170, 195, 210);
+  background-color: white;
   mix-blend-mode: difference;
   border-radius: 15px;
   position: absolute;
@@ -48,20 +53,18 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  user-select: none;
 }
-.menu-select section .options div {
-  height: 100%;
-  width: 100%;
-  font-size: 20px;
+.menu-select section .options-buttons {
+  cursor: pointer;
   display: grid;
   place-items: center;
-  cursor: pointer;
 }
-.menu-select section .options div p {
-  color: rgb(166, 189, 200);
+.menu-select section .options-buttons p {
+  color: rgb(229, 212, 204);
   user-select: none;
-  font-size: 40px;
-  margin: 0;
+  font-size: 3rem;
+  margin: 1vh 0 0;
 }
 .menu-button {
   border-radius: 15px;
@@ -69,26 +72,57 @@
   display: grid;
   place-items: center;
   cursor: pointer;
+  user-select: none;
 }
 .menu-button-up {
   background-color: rgb(242, 178, 55);
 }
+.menu-button-up:active {
+  background-color: #e79d0f;
+}
 .menu-button-down {
   background-color: rgb(49, 196, 190);
+}
+.menu-button-down:active {
+  background-color: #279b96;
+}
+
+.cross {
+  color: rgb(49, 196, 190);
+}
+
+.circle {
+  color: rgb(242, 178, 55);
 }
 
 @media screen and (min-width: 1024px) {
   .menu {
-    width: 30vw;
+    width: 35vw;
     height: 70vh;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) and (min-height: 500px) {
+  .menu {
+    width: 60vw;
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) and (max-height: 500px) {
+  .menu {
+    width: 60vw;
+    height: 95vh;
+  }
+}
+@media screen and (max-width: 767px) {
   .menu {
     width: 90vw;
     height: 70vh;
   }
 }
+* {
+  font-family: "Nunito", sans-serif;
+}
+
 .container {
   width: 100vw;
   height: 100vh;

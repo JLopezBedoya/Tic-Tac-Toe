@@ -1,26 +1,27 @@
 import { useState } from "react";
-
+import { FaO } from "react-icons/fa6";
+import { FaXmark } from "react-icons/fa6";
 function Menu(){
-    const [option, setOption] = useState()
+    const [option, setOption] = useState("0")
     return(
         <div className="menu">
             <article className="menu-header">
-                <h1>X O</h1>
+                <h1><span className="cross"><FaXmark /></span>  <span className="circle"><FaO /></span></h1>
             </article>
             <article className="menu-select">
                 <div className="menu-select-text"><h3>Pick Player Mark</h3></div>
                 <section>
                     <div className="selected" style={{left: option}}></div>
                     <div className="options">
-                        <div onClick={()=>setOption("0")}>
-                            <p>X</p>
+                        <div className="options-buttons" onClick={()=>setOption("0")}>
+                            <p><FaXmark /></p>
                         </div>
-                        <div onClick={()=>setOption("48%")}>
-                            <p>O</p>
+                        <div className="options-buttons" onClick={()=>setOption("48%")}>
+                            <p><FaO /></p>
                         </div>
                     </div>
             </section>
-                <div className="menu-select-text"><h3>there's a text over here that i can't read</h3></div>
+                <div className="menu-select-text"><h3>Who goes first is random</h3></div>
             </article>
             <article className="menu-button menu-button-up">
                 New Game (Vs CPU)
