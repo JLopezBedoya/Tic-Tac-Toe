@@ -4,6 +4,9 @@
   display: grid;
   grid-template-rows: 15% 40% 15% 15%;
   gap: 5%;
+  transition: left 600ms;
+  width: 100%;
+  height: 100%;
 }
 .menu-header {
   text-align: center;
@@ -26,7 +29,6 @@
 }
 .menu-select-text h3 {
   color: rgb(229, 212, 204);
-  margin: 0;
 }
 .menu-select section {
   margin: 0 10%;
@@ -73,6 +75,7 @@
   place-items: center;
   cursor: pointer;
   user-select: none;
+  font-size: 25px;
 }
 .menu-button-up {
   background-color: rgb(242, 178, 55);
@@ -95,32 +98,83 @@
   color: rgb(242, 178, 55);
 }
 
-@media screen and (min-width: 1024px) {
-  .menu {
-    width: 35vw;
-    height: 70vh;
-  }
+.game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 200%;
+  transition: 600ms left;
+  display: grid;
+  grid-template-rows: auto 70% 10%;
+  gap: 5%;
+  text-align: center;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) and (min-height: 500px) {
-  .menu {
-    width: 60vw;
-    height: 70vh;
-  }
+.game article {
+  display: grid;
+  grid-template-columns: 27% auto 27%;
+  gap: 9%;
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) and (max-height: 500px) {
-  .menu {
-    width: 60vw;
-    height: 95vh;
-  }
+.game-header svg {
+  font-size: 24px;
 }
-@media screen and (max-width: 767px) {
-  .menu {
-    width: 90vw;
-    height: 70vh;
-  }
+.game-header-icons {
+  display: flex;
+  align-items: end;
 }
+.game-header-turn {
+  background-color: rgb(31, 53, 64);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: rgb(229, 212, 204);
+  box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.541);
+}
+.game-header-return {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.game-header-return svg {
+  height: 100%;
+  width: 20%;
+  padding: 0 10%;
+  border-radius: 10px;
+  background-color: rgb(229, 212, 204);
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.541);
+  cursor: pointer;
+}
+.game-board section {
+  background-color: rgb(31, 53, 64);
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.541);
+  font-size: 300%;
+}
+.game-footer section {
+  border-radius: 10px;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.541);
+  display: grid;
+  place-items: center;
+}
+.game-footer-you {
+  background-color: rgb(242, 178, 55);
+}
+.game-footer-ties {
+  background-color: rgb(229, 212, 204);
+}
+.game-footer-cpu {
+  background-color: rgb(49, 196, 190);
+}
+
 * {
   font-family: "Nunito", sans-serif;
+}
+
+h3, h4, h2 {
+  margin: 0;
 }
 
 .container {
@@ -130,6 +184,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
 body {
@@ -137,6 +192,35 @@ body {
   margin: 0;
   width: 100%;
   display: flex;
+}
+
+.zone {
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .zone {
+    width: 35vw;
+    height: 80vh;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) and (min-height: 500px) {
+  .zone {
+    width: 60vw;
+    height: 80vh;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) and (max-height: 500px) {
+  .zone {
+    width: 60vw;
+    height: 95vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  .zone {
+    width: 90vw;
+    height: 70vh;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
