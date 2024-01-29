@@ -1,0 +1,16 @@
+@import "./menu";
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body{
+    background-color: rgb(26,43,51);
+    margin: 0;
+    width: 100%;
+    display: flex;
+}

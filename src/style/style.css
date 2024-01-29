@@ -1,0 +1,108 @@
+.menu {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 10% 45% 15% 15%;
+  gap: 5%;
+}
+.menu-header {
+  text-align: center;
+}
+.menu-select {
+  background-color: rgb(31, 53, 64);
+  display: grid;
+  grid-template-rows: 30% 40% 30%;
+  border-radius: 15px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.541);
+}
+.menu-select div {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.menu-select h3 {
+  color: rgb(166, 189, 200);
+  margin: 0;
+}
+.menu-select section {
+  margin: 0 10%;
+  background-color: rgb(26, 43, 51);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.menu-select section .selected {
+  background-color: rgb(170, 195, 210);
+  mix-blend-mode: difference;
+  border-radius: 15px;
+  position: absolute;
+  height: 85%;
+  width: 48%;
+  margin: 0 2%;
+  cursor: pointer;
+  transition: left 200ms ease-in;
+}
+.menu-select section .options {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.menu-select section .options div {
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.menu-select section .options div p {
+  color: rgb(166, 189, 200);
+  user-select: none;
+  font-size: 40px;
+  margin: 0;
+}
+.menu-button {
+  border-radius: 15px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.541);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.menu-button-up {
+  background-color: rgb(242, 178, 55);
+}
+.menu-button-down {
+  background-color: rgb(49, 196, 190);
+}
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    width: 30vw;
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .menu {
+    width: 90vw;
+    height: 70vh;
+  }
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body {
+  background-color: rgb(26, 43, 51);
+  margin: 0;
+  width: 100%;
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */
