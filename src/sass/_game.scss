@@ -11,8 +11,8 @@
     text-align: center;
     article{
         display: grid;
-        grid-template-columns: 27% auto 27%;
-        gap: 9%;
+        grid-template-columns: 31% auto 31%;
+        gap: 4%;
     }
     &-header{
         svg{
@@ -72,6 +72,76 @@
         &-cpu{
             background-color: $cross;
         }
+    }
+}
+
+.banner{
+    visibility: hidden;
+    position: absolute;
+    &-show{
+        position: absolute;
+        background-color: $main;
+        width: 100vw;
+        height: 40vh;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h3{
+            text-align: center;
+            color: $text;
+        }
+        div{
+            display: flex;
+            gap: 5%;
+            button{
+                border: none;
+                font-size: 120%;
+                width: 50%;
+                height: 160%;
+                border-radius: 10px;
+                box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.541);
+            }
+            .button-circle{
+                background-color: $circle;
+            }
+            .button-cross{
+                background-color: $cross;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            div{
+                width: 30vw;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) and (min-height: 500px) {
+            div{
+                width: 60vw;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) and (max-height: 500px) {
+            div{
+                width: 90vw;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            div{
+                width: 90vw;
+            }
+        }
+    }
+    &-piece{
+        svg{
+            font-size: 200%;
+        }
+    }
+    &-draw{
+            color: $circle;
+    }
+    &-up{
+        position: relative;
+        bottom: 30%;
     }
 }
 .board-cross{

@@ -12,8 +12,8 @@
 }
 .game article {
   display: grid;
-  grid-template-columns: 27% auto 27%;
-  gap: 9%;
+  grid-template-columns: 31% auto 31%;
+  gap: 4%;
 }
 .game-header svg {
   font-size: 24px;
@@ -67,6 +67,74 @@
 }
 .game-footer-cpu {
   background-color: rgb(49, 196, 190);
+}
+
+.banner {
+  visibility: hidden;
+  position: absolute;
+}
+.banner-show {
+  position: absolute;
+  background-color: rgb(31, 53, 64);
+  width: 100vw;
+  height: 40vh;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.banner-show h3 {
+  text-align: center;
+  color: rgb(229, 212, 204);
+}
+.banner-show div {
+  display: flex;
+  gap: 5%;
+}
+.banner-show div button {
+  border: none;
+  font-size: 120%;
+  width: 50%;
+  height: 160%;
+  border-radius: 10px;
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.541);
+}
+.banner-show div .button-circle {
+  background-color: rgb(242, 178, 55);
+}
+.banner-show div .button-cross {
+  background-color: rgb(49, 196, 190);
+}
+@media screen and (min-width: 1024px) {
+  .banner-show div {
+    width: 30vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) and (min-height: 500px) {
+  .banner-show div {
+    width: 60vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) and (max-height: 500px) {
+  .banner-show div {
+    width: 90vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner-show div {
+    width: 90vw;
+  }
+}
+.banner-piece svg {
+  font-size: 200%;
+}
+.banner-draw {
+  color: rgb(242, 178, 55);
+}
+.banner-up {
+  position: relative;
+  bottom: 30%;
 }
 
 .board-cross {
