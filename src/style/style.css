@@ -1,4 +1,101 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+.game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 200%;
+  transition: 600ms left;
+  display: grid;
+  grid-template-rows: auto 70% 10%;
+  gap: 5%;
+  text-align: center;
+}
+.game article {
+  display: grid;
+  grid-template-columns: 27% auto 27%;
+  gap: 9%;
+}
+.game-header svg {
+  font-size: 24px;
+}
+.game-header-icons {
+  display: flex;
+  align-items: end;
+}
+.game-header-turn {
+  background-color: rgb(31, 53, 64);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: rgb(229, 212, 204);
+  box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.541);
+}
+.game-header-return {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.game-header-return svg {
+  height: 100%;
+  width: 20%;
+  padding: 0 10%;
+  border-radius: 10px;
+  background-color: rgb(229, 212, 204);
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.541);
+  cursor: pointer;
+}
+.game-board section {
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.541);
+  font-size: 300%;
+}
+.game-footer section {
+  border-radius: 10px;
+  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.541);
+  display: grid;
+  place-items: center;
+}
+.game-footer-you {
+  background-color: rgb(242, 178, 55);
+}
+.game-footer-ties {
+  background-color: rgb(229, 212, 204);
+}
+.game-footer-cpu {
+  background-color: rgb(49, 196, 190);
+}
+
+.board-cross {
+  color: rgb(49, 196, 190);
+  background-color: rgb(31, 53, 64);
+  transition: color 200ms, background-color 500ms;
+}
+.board-cross-win {
+  background-color: rgb(49, 196, 190);
+  color: rgb(31, 53, 64);
+  transition: color 500ms, background-color 500ms;
+}
+
+.board-circle {
+  color: rgb(242, 178, 55);
+  background-color: rgb(31, 53, 64);
+  transition: color 200ms, background-color 500ms;
+}
+.board-circle-win {
+  background-color: rgb(242, 178, 55);
+  color: rgb(31, 53, 64);
+  transition: color 500ms, background-color 500ms;
+}
+
+.board-space {
+  background-color: rgb(31, 53, 64);
+  color: rgba(0, 0, 0, 0);
+}
+
 .menu {
   position: absolute;
   display: grid;
@@ -96,81 +193,6 @@
 
 .circle {
   color: rgb(242, 178, 55);
-}
-
-.space {
-  color: rgba(0, 0, 0, 0);
-}
-
-.game {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 200%;
-  transition: 600ms left;
-  display: grid;
-  grid-template-rows: auto 70% 10%;
-  gap: 5%;
-  text-align: center;
-}
-.game article {
-  display: grid;
-  grid-template-columns: 27% auto 27%;
-  gap: 9%;
-}
-.game-header svg {
-  font-size: 24px;
-}
-.game-header-icons {
-  display: flex;
-  align-items: end;
-}
-.game-header-turn {
-  background-color: rgb(31, 53, 64);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: rgb(229, 212, 204);
-  box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.541);
-}
-.game-header-return {
-  display: flex;
-  align-items: end;
-  justify-content: end;
-}
-.game-header-return svg {
-  height: 100%;
-  width: 20%;
-  padding: 0 10%;
-  border-radius: 10px;
-  background-color: rgb(229, 212, 204);
-  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.541);
-  cursor: pointer;
-}
-.game-board section {
-  background-color: rgb(31, 53, 64);
-  display: grid;
-  place-items: center;
-  border-radius: 15px;
-  box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.541);
-  font-size: 300%;
-}
-.game-footer section {
-  border-radius: 10px;
-  box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.541);
-  display: grid;
-  place-items: center;
-}
-.game-footer-you {
-  background-color: rgb(242, 178, 55);
-}
-.game-footer-ties {
-  background-color: rgb(229, 212, 204);
-}
-.game-footer-cpu {
-  background-color: rgb(49, 196, 190);
 }
 
 * {

@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaO, FaX, FaArrowRotateRight } from "react-icons/fa6";
 
 function Game({data, setData}){
+    const [player, setPlayer] = useState()
+    useEffect(()=>{
+        setPlayer((Math.round(Math.random()*100)>50) ? 1:2)
+    },[data])
     const comeBack = ()=>{
         setData({
             show: true, 
@@ -19,7 +23,34 @@ function Game({data, setData}){
         ties: 32,
         cpu: 12
     }]
-    const [player, setPlayer] = useState(1)
+        useEffect(()=>{
+        setState([
+        0,0,0,
+        0,0,0,
+        0,0,0
+    ])
+    }, [data.show])
+    const handleWin = (player)=>{
+        const cases = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
+        const pre = (player==1) ? 2:1
+        const position = []
+        var winner
+        var indexs
+        state.forEach((e,i)=>{
+            if(e==pre){
+                position.push(i)
+            }
+        })
+        for (const e of cases) {
+            if (e.every(j => position.includes(j))) {
+                winner = true;
+                indexs = e
+                break;
+            }
+        }
+        return (winner)? indexs:[]
+    }
+    const win = handleWin(player)
     return(
         <section className="game" style={{left: ((data.show) ? "200%":"0")}}>
             <article className="game-header">
@@ -27,7 +58,7 @@ function Game({data, setData}){
                 <section className="game-header-turn"> {(player==1) ? <span className="cross"><FaX /></span>:<span className="circle"><FaO /></span>} </section>
                 <section className="game-header-return" onClick={comeBack}><FaArrowRotateRight /></section>
             </article>
-            <Board player={player} setPlayer={setPlayer} game={state} setGame={setState} />
+            <Board data={data} win={win} player={player} setPlayer={setPlayer} game={state} setGame={setState} />
             <article className="game-footer">
                 <section className="game-footer-you">
                     <h4>You</h4>
@@ -46,9 +77,9 @@ function Game({data, setData}){
     )
 }
 
-function Board({game, setGame, player, setPlayer}){
-    const players = [<FaArrowRotateRight />, <FaX/>, <FaO/>]
-    console.log(player);
+function Board({game, setGame, player, setPlayer, win, data}){
+    const pieces = [<FaArrowRotateRight />, <FaX/>, <FaO/>]
+    //const cpu = !data.game && player==((data.icon) ? 1:2)
     const playerhandle = (id, posc)=>{
         if(posc == 0){
             setGame(prev => {
@@ -62,7 +93,7 @@ function Board({game, setGame, player, setPlayer}){
     return(
         <article className="game-board">
             {game.map((e,i)=>(
-                <section onClick={()=>playerhandle(i, e)} className={(e==1) ? "cross":(e==2)?"circle":"space"} key={"position"+i}> {players[e]} </section>
+                <section onClick={()=>win.length==0?playerhandle(i, e):undefined} className={`board-${((e==1) ? "cross":(e==2)?"circle":"space")}${(win.includes(i))?"-win":""}`} key={"position"+i}> {pieces[e]} </section>
             ))}
         </article>
     )

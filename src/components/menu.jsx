@@ -10,7 +10,7 @@ function Menu({data, SetData}){
         })
     }
     return(
-        <div className="menu" style={{left: ((data.show) ? "0":"200%")}}>
+        <div className="menu" style={{left: ((data.show) ? "0":"-200%")}}>
             <article className="menu-header">
                 <h1><span className="cross"><FaX /></span>  <span className="circle"><FaO /></span></h1>
             </article>

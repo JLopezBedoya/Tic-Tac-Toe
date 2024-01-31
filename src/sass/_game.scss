@@ -49,7 +49,6 @@
     }
     &-board{
         section{
-            background-color: $main;
             display: grid;
             place-items: center;
             border-radius: 15px;
@@ -74,4 +73,28 @@
             background-color: $cross;
         }
     }
+}
+.board-cross{
+    color: $cross;
+    background-color: $main;
+    transition: color 200ms, background-color 500ms;
+    &-win{
+        background-color: $cross;
+        color: $main;
+        transition: color 500ms, background-color 500ms;
+    }
+}
+.board-circle{
+    color: $circle;
+    background-color: $main;
+    transition: color 200ms, background-color 500ms;
+    &-win{
+        background-color: $circle;
+        color: $main;
+        transition: color 500ms, background-color 500ms;
+    }
+}
+.board-space{
+    background-color: $main;
+    color: rgba(0,0,0,0);
 }
