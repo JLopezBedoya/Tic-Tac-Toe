@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Game from "./components/game";
 import Menu from "./components/menu";
 import { FaO, FaX } from "react-icons/fa6";
 
 function App(){
   const [winner, SetWinner ] = useState(0)
+  const [ties, setTies] = useState({
+    you: 0,
+    ties: 0,
+    rival: 0
+})
+  useEffect(()=>{
+    if(winner!=0){
+      let count = ties.ties
+      count++
+      let you = ties.you
+      let rival = ties.rival
+      if(winner==1)you++
+      if(winner==2)rival++
+      setTies({
+        ties: count,
+        you,
+        rival
+      })
+    }
+  }, [winner])
   const [state, setState] = useState([
     0,0,0,
     0,0,0,
@@ -15,7 +35,7 @@ function App(){
     icon: true, //true == X / false == O
     game: true, //true == VsPlayer / false == VsCPU
   })
-  function WinnerBan(){//winner = 0==Playing/1==Player1/2==Player2/3==CPU/4==Draw
+  function WinnerBan(){//winner = 0==Playing/1==Player1/2==Player2/4==Draw
     let piece = (winner==1) ? (options.icon) ? 1:2: (!options.icon) ? 1:2;
     const pieces = [<FaX/>, <FaO/>]
     const quit = ()=>{
@@ -44,7 +64,7 @@ function App(){
       <WinnerBan />
       <div className="zone" style={{filter: (winner==0)?"brightness(1)":"brightness(0.7)"}}>
         <Menu SetData={SetOptions} data={options} />
-        <Game state={state} setState={setState} setData={SetOptions} data={options} setWinner={SetWinner}/>
+        <Game setTies={setTies} ties={ties} state={state} setState={setState} setData={SetOptions} data={options} setWinner={SetWinner}/>
       </div>
     </div>
   )

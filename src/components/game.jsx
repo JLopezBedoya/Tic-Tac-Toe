@@ -3,7 +3,7 @@ import { FaO, FaX, FaArrowRotateRight } from "react-icons/fa6";
 import Board from "./board";
 const cases = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
 
-function Game({data, setData, setWinner, state, setState}){
+function Game({data, setData, setWinner, state, setState, ties}){
     const [player, setPlayer] = useState()
     useEffect(()=>{
         setWinner(0)
@@ -19,11 +19,6 @@ function Game({data, setData, setWinner, state, setState}){
             game: data.game,
         })
     }
-    const [ties, setTies] = [{
-        you: 16,
-        ties: 32,
-        cpu: 12
-    }]
         useEffect(()=>{
         setState([
         0,0,0,
@@ -69,8 +64,8 @@ function Game({data, setData, setWinner, state, setState}){
                     <h2>{ties.ties}</h2>
                 </section>
                 <section className="game-footer-cpu">
-                    <h4>CPU</h4>
-                    <h2>{ties.cpu}</h2>
+                    <h4>Rival</h4>
+                    <h2>{ties.rival}</h2>
                 </section>
             </article>
         </section>
