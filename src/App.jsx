@@ -5,11 +5,17 @@ import { FaO, FaX } from "react-icons/fa6";
 
 function App(){
   const [winner, SetWinner ] = useState(0)
-  const [ties, setTies] = useState({
-    you: 0,
-    ties: 0,
-    rival: 0
-})
+  var stg = localStorage.getItem("ties");
+  if(stg==undefined || stg == null){
+    const newSave = JSON.stringify({
+      you: 0,
+      ties: 0,
+      rival: 0
+    })
+    localStorage.setItem("ties", newSave)
+  }
+  const save = JSON.parse(stg)
+  const [ties, setTies] = useState(save)
   useEffect(()=>{
     if(winner!=0){
       let count = ties.ties
@@ -18,11 +24,13 @@ function App(){
       let rival = ties.rival
       if(winner==1)you++
       if(winner==2)rival++
-      setTies({
+      let save = {
         ties: count,
         you,
         rival
-      })
+      }
+      setTies(save)
+      localStorage.setItem("ties", JSON.stringify(save))
     }
   }, [winner])
   const [state, setState] = useState([
