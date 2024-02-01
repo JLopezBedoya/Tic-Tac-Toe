@@ -50,7 +50,10 @@ function Board({game=[], setGame, player, setPlayer, win, data, setWinner}){
         }
         cpu = (data.game) ? true:player==((data.icon) ? 1:2);
         if (!cpu && win.length==0){
-            const plays = behavior(2);
+            let cpuPiece = (data.icon) ? 2:1;
+            const numeroRandom = Math.random();
+            const resultado = numeroRandom < 0.7 ? (cpuPiece==1)?2:1 : cpuPiece;
+            const plays = behavior(cpuPiece);
             const id = searchPosition(plays)
             setTimeout(()=>{
                 playerhandle(id,0)

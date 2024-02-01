@@ -63,13 +63,13 @@
             display: grid;
             place-items: center;
         }
-        &-you{
+        &-circle{
             background-color: $circle;
         }
         &-ties{
             background-color: $text;
         }
-        &-cpu{
+        &-cross{
             background-color: $cross;
         }
     }

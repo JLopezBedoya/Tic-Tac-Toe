@@ -55,7 +55,7 @@ function Game({data, setData, setWinner, state, setState, ties}){
             </article>
             <Board setWinner={setWinner} data={data} win={win} player={player} setPlayer={setPlayer} game={state} setGame={setState} />
             <article className="game-footer">
-                <section className="game-footer-you">
+                <section className={`game-footer-${(data.icon)? "cross":"circle"}`}>
                     <h4>You</h4>
                     <h2>{ties.you}</h2>
                 </section>
@@ -63,7 +63,7 @@ function Game({data, setData, setWinner, state, setState, ties}){
                     <h4>Ties</h4>
                     <h2>{ties.ties}</h2>
                 </section>
-                <section className="game-footer-cpu">
+                <section className={`game-footer-${(!data.icon)? "cross":"circle"}`}>
                     <h4>Rival</h4>
                     <h2>{ties.rival}</h2>
                 </section>

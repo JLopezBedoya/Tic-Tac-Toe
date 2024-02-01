@@ -59,13 +59,13 @@
   display: grid;
   place-items: center;
 }
-.game-footer-you {
+.game-footer-circle {
   background-color: rgb(242, 178, 55);
 }
 .game-footer-ties {
   background-color: rgb(229, 212, 204);
 }
-.game-footer-cpu {
+.game-footer-cross {
   background-color: rgb(49, 196, 190);
 }
 
