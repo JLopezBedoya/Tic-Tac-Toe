@@ -60,7 +60,7 @@ function Game({data, setData, setWinner, state, setState, ties}){
                     <h2>{ties.you}</h2>
                 </section>
                 <section className="game-footer-ties">
-                    <h4>Ties</h4>
+                    <h4>Matches</h4>
                     <h2>{ties.ties}</h2>
                 </section>
                 <section className={`game-footer-${(!data.icon)? "cross":"circle"}`}>

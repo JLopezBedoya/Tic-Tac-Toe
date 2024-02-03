@@ -15,7 +15,7 @@ function Menu({data, SetData}){
                 <h1><span className="cross"><FaX /></span>  <span className="circle"><FaO /></span></h1>
             </article>
             <article className="menu-select">
-                <div className="menu-select-text"><h3>Pick Player Mark</h3></div>
+                <div className="menu-select-text"><h3>Pick Player's Mark</h3></div>
                 <section>
                     <div className="selected" style={{left: (option) ? "0":"48%"}}></div>
                     <div className="options">
